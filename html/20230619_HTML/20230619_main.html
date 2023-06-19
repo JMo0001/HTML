@@ -9,36 +9,49 @@
     <header>
         <div><img width="300" src="../20230619_HTML/resources/images/logo.svg"</div>
         <div>
-            <form action="./20230619_search_do.html" method="get">
-                <input type="text">
-                <button type="submit">검색</button>
+            <form action="a.html" method="post">
+                <input type="text" name="word" value="강제값">
+                <button type="submit">택스트와<img width="22" src="./resources/images/img.png">이미지 가능</button>
+                <input type="submit" value="택스트만 작성가능">
+                <input type="button" value="type button은 js에서 사용될 예정">
+                <input type="reset" value="form태그내부 사용자 입력창들에 초기값">
             </form>
         </div>
         <hr>
     </header>
     <div id="wrap_content">
         <section>
+            <form action="../20230619_HTML/resources/images/" method="get">
+                <input type="file" name="uploadfile">
+                <button type="submit">파일 전달</button>
+            </form>
+            <hr>
         </section>
         <aside>
-            <form action="./20231619_login_do.html" method="get">
+            http://127.0.0.1:5500/20230619_login_do.html?hidd=hvalue&id=&pwd=
+            http://127.0.0.1:5500/20230619_login_do.html?hidd=hvalue&id=&pwd=
+            <form action="./20231619_login_do.html" method="post">
+                <input type="hidden" name="hidd" value="hvalue">
                 <table>
                     <tbody>
                         <tr>
                             <th><label>id</label></th>
-                            <td><input type="text"></td>
+                            <td><input type="text" name="id"></td>
                             <td rowspan="2"><button type="submit">로그인</button></td>
                         </tr>
                         <tr>
                             <th><label>password</label</th>
-                            <td><input type="text"></td>
+                            <td><input type="password" name="pwd"></td>
                         </tr>
                     </tbody>
                 </table>
-                
+                <input type="reset" value="form태그내부 사용자 입력창들에 초기값">
             </form>
         </aside>
     </div>
+    <hr>
     <footer>
+        <input type="button" value="button은 form과 무관하게 js연동">
         copyright KH.or.kr
     </footer>
 </body>
