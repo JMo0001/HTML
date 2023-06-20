@@ -4,8 +4,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>선택자</title>
+    <link href="./20230619_HTML/resources/css/reset.css" rel="stylesheet">
+    <style>
+        /* CSS문법 */
+        /*첫번째 p태그에 background yellow 글자색은 green 
+        p[id=id1]{background-color: yellow; color: green;}
+        p:nth-child(1){background-color: yellow; color: green;}
+        p:first-child{background-color: yellow; color: green;}
+        p:first-of-type{background-color: yellow; color: green;}
+        p:first-of-type p만 뽑아내
+        p#id1{background-color: yellow; color: green;}
+        두번째 p태그에 background red 글자색은 blue 
+        p:nth-child(2){background-color: red; color: yellow;}
+        p:nth-of-type(2){background-color: red; color: yellow;}
+        p#id2{background-color: red; color: yellow;}
+        세번째 p태그에 background gray 글자색은 red 
+        p:last-child{background-color: grey; color: black}
+        p:nth-last-of-type(){background-color: grey; color: black}
+        p#id3{background-color: grey; color: black}
+        상황에 맞는 작성
+        
+        .c1{background-color: yellow; color: green;}
+        .c2{background-color: red; color: yellow;}
+        .c3{background-color: grey; color: black}
+        
+        
+        
+        .c1.ca.cc{background-color: yellow; color: green;}
+        .c2.ca.cb.cc{background-color: red; color: yellow;}
+        .c3.cb{background-color: grey; color: black}
+        
+        .ca{
+            background-color: yellow;
+        }
+        .ba{
+            color: green;
+        }
+        .cc{
+            font-size: 1.2em;
+        }
+        
+
+        div #id1{background-color: yellow; color: green;}
+        div #id2{background-color: red; color: yellow;}
+        div #id3{background-color: grey; color: black;}
+        div .ca.cc{background-color: yellow;color: green;}
+        */
+        p.ca.cc{background-color: yellow; color: green;}
+        p.ca.cb.cc{background-color: red; color: yellow;}
+        p.cb{background-color: grey; color: black;}
+    </style>
 </head>
 <body>
-    
+    <div>
+        <p id="id1" class="ca cc" >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <a>여기 끼워넣기</a> <!--c1클래스, ca클래스, cc클래스 소속-->
+        <p id="id2" class="ca cb cc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <a>여기 끼워넣기</a>
+        <p id="id3" class="cb">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
 </body>
 </html>
