@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul{
+            list-style: none;
+            
+        }
+        ul li{
+            padding: 10px;
+        }
+        .button:last-child{
+            margin-left: 10px;
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <form action="result.html" method="get">
+        <fieldset class="fieldset">
+            <ul>
+                <li>
+                    <div>
+                        회원여부
+                        <input type="radio" name="member" value="yes" checked>회원
+                        <input type="radio" name="member" value="no">비회원
+                    </div>
+                </li>
+                <li>
+                    <div>
+                    취미(중복선택) :
+                    <label><input type="checkbox" name="hobby" value="read">독서</label>
+                    <label><input type="checkbox" name="hobby" value="movie">영화</label>
+                    <label><input type="checkbox" name="hobby" value="music">음악</label>
+                    <label><input type="checkbox" name="hobby" value="sport">스포츠</label>
+                </div>
+                    
+                </li>
+                <li>
+                    <div>
+                        직업:
+                        <select size="4" multiple>
+                            <option value="stdunt" selected>학생</option> 
+                            <option value="employee">회사원</option>
+                            <option value="teacher">교사</option> 
+                            <option value="business">자영업</option> 
+                            <option value="etc">기타</option> 
+                        </select>
+                    </div>
+                    
+                </li>
+                <li>
+                    <p>남기고 싶은 말 :</p>
+                    <textarea cols="70" rows="8" placeholder="150자 내외로 글을 남겨주세요."></textarea>
+                </li>
+                <li>
+                    <button type="reset" class="button">초기화</button>
+                    <button type="submit" class="button">전송</button>
+                </li>
+            </ul>
+        </fieldset>
+    </form>
+</body>
+</html>
+
+
