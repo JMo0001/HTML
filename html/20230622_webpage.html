@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--[1] 해상도 - 최적해상도1250 결정(최대/최소 마지막점검)-->
+    <!--[2] content 영역 1040px 80vw 90%, 배치(중앙, 왼쪽)-->
+    <!--[3] reset.css 폴더경로-->
+    <link href="./20230619_HTML/resources/css/reset.css" rel="stylesheet">
+    <!--TODO js jQuery-->
+    <!--[4] project명 또는 core.css 폴더경로 - bootstrap, template 등으로 대체-->
+    <!--[4] 기본색상 10~15개정도 class 미리 만들어두기-->
+    <!--[4] 폰트크기 5~7개저정도 class 미리 만들어두기-->
+    <!--[4] button 3개 class 미리 만들어두기-->
+    <!--[4] a 모양 미리 만들어두기-->
+
+    <!--[5] Layout 영역-->
+    <style>
+        .wrap{
+            border: 1px solid black;
+        }
+      .wrap.header{
+        background-color: bisque;
+      }
+      .wrap.content{
+        background-color: beige;
+      }
+      .wrap.footer{
+        background-color: bisque;
+      }
+      header, #content, footer{
+        /* 중앙정렬(div 컨텐츠를 가운데정렬 하는 방법) */
+        width: 80vw;
+        margin: 0 auto;
+        border: 1px solid black;
+      }
+      #content{
+        overflow: hidden;
+      }
+      /* sction */
+      section{
+        width: 80%;
+        float: left;
+      }
+      /* aside */
+      aside{
+        width: 20%;
+        float: right;
+      }
+    </style>
+</head>
+<body>
+    <div class="wrap header">
+        <header>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate ullam fugiat sequi perspiciatis laudantium enim, quia vitae laborum omnis voluptate, nam atque ut doloribus eligendi repudiandae magnam et deserunt unde!</p>
+        </header>
+    </div>
+    <div class="wrap content">
+        <div id="content">
+            <section>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur voluptas minus magni aspernatur odit qui temporibus minima, tempora assumenda sapiente nemo eligendi nam eum aut accusamus id distinctio ad voluptate.</p>
+            </section>
+            <aside>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa iusto at itaque nesciunt, officia soluta deleniti ratione omnis veniam exercitationem beatae dolorem consequatur quo reprehenderit natus, corrupti magni amet tempora.</p>
+            </aside>
+        </div>
+    </div>
+    <div class="wrap footer">
+        <footer>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla quia saepe ad ex, sint voluptates ducimus placeat consequatur perspiciatis dolorem quod odio accusamus reprehenderit maiores repudiandae libero adipisci quae perferendis!</p>
+        </footer>
+    </div>
+</body>
+</html>
