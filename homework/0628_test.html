@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>포트폴리오 문제</title>
+    <style>
+        #flex{
+            display: flex;
+            flex-direction: column;
+        }
+        
+        #menu1 .bold{
+            text-align: center;
+            font-weight: bold;
+            padding-right: 50px;
+        }
+        #menu1 #title{
+            width: 300px;
+        }
+        #menu1 #content{
+            width: 300px;
+            height: 200px;
+        }
+        #menu1 div{
+            margin-top: 5px;
+        }
+        #menu1 #button1{
+            padding-left: 200px;
+            margin-top: 39px;
+        }
+        .table{
+            border: 1px solid black;
+        }
+        .table td, th{
+            border: 1px solid black;
+        }
+        .table td{
+            text-align: left;
+            background-color: beige;
+        }
+        .table th{
+            text-align: center;
+            background-color: lightsalmon;
+            color: white;
+        }
+        .table #box1{
+            width: 5%;
+        }
+        .table #box2{
+            width: 60%;
+        }
+        .table tbody>tr>td:nth-of-type(3){
+            width: 5%;
+        }
+        .table #box3{
+            width: 10%;
+        }
+        .table #box4{
+            width: 10%;
+        }
+        .table #box5{
+            width: 10%;
+        }
+    </style>
+</head>
+<body>
+    <section id="flex">
+        <form action="insert.no" method="post">
+            <div id="menu1">
+                <fieldset>
+                    <legend>공지사항 작성하기</legend>
+                    <ul>
+                        <il>
+                            <div>
+                                <label for="title" class="bold">제목</label>
+                                <input id="title" type="text" name="title" placeholder="제목을 입력하시오." required>
+                            </div>
+                        </il>
+                        <il>
+                            <div>
+                                <label for="content" class="bold">내용</label>
+                                <input id="content" type="text" name="content" placeholder="내용을 입력하시오." required>
+                            </div>
+                        </il>
+                        <il>
+                            <div>
+                                <label for="uploadFile" class="bold" style="padding-right: 18px;">첨부파일</label>
+                                <input type="file" name="uploadFile">
+                            </div>
+                        </il>
+                        <il>
+                            <div id="button1">
+                                <input type="submit" value="작성하기">
+                            </div>
+                        </il>
+                    </ul>
+                </fieldset>
+            </div>
+            <hr>
+            <div id="menu2">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th id="box1">번호</th>
+                            <th id="box2" colspan="2">제목</th>
+                            <th id="box3">작성자</th>
+                            <th id="box4">작성일</th>
+                            <th id="box5">조회수</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>9</td>
+                            <td>공지사항 제목 9</td>
+                            <td>
+                                <button>바로가기</button>
+                            </td>
+                            <td>user01</td>
+                            <td>2021-03-29</td>
+                            <td>34</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>공지사항 제목 6</td>
+                            <td>
+                                <button>바로가기</button>
+                            </td>
+                            <td>answ445</td>
+                            <td>2021-03-12</td>
+                            <td>67</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>공지사항 제목 3</td>
+                            <td>
+                                <button>바로가기</button>
+                            </td>
+                            <td>testg12</td>
+                            <td>2021-03-01</td>
+                            <td>98</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>공지사항 제목 2</td>
+                            <td>
+                                <button>바로가기</button>
+                            </td>
+                            <td>palwe3</td>
+                            <td>2021-01-02</td>
+                            <td>85</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>공지사항 제목 1</td>
+                            <td>
+                                <button>바로가기</button>
+                            </td>
+                            <td>xml23</td>
+                            <td>2020-12-24</td>
+                            <td>124</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th colspan="4">전체공지사항 갯수</th>
+                            <th colspan="2">5개</th>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </form>
+    </section>
+</body>
+</html>
