@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="../html/20230619_HTML/resources/css/reset.css" rel="stylesheet">
+    <style>
+        header, #content, footer{
+        box-sizing: border-box;
+        width: 1160px;
+        margin: 0 auto;
+        }
+        section{
+            width: 960px;
+        }
+        aside{
+            width: 200px;
+        }
+
+        header{
+            position: relative;
+            height: 100px;
+        }
+        .header{
+            overflow: hidden;
+        }
+        .header >div{
+            float: left;
+        }
+        .title #name1{
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .title #name2{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 25px;
+            font-weight: bold;
+        }
+        .menu1{
+            position: absolute;
+            top:0;
+            right: 0;
+        }
+        .menu2{
+            position: absolute;
+            top: 100px;
+            right: 0;
+        }
+        .menu1 ul{
+            overflow: hidden;
+            border: 1px solid black;
+            border-radius: 20px;
+            padding: auto;
+        }
+        .menu2 ul{
+            overflow: hidden;
+            border: 1px solid black;
+            border-radius: 5px;
+            padding: auto;
+        }
+        .menu1 li{
+            float: left;
+            padding: 5px;
+            border-right: 1px solid black;
+        }
+        .menu2 ul{
+            overflow: hidden;
+        }
+        .menu2 li{
+            float: left;
+            padding: 5px;
+            border-right: 1px solid black;
+        }
+        .title{
+            margin-top: 30px;
+        }
+        .header li a:hover{
+            background-color: black;
+            color: red;
+        }
+        
+       
+
+        
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header">
+            <div class="title">
+                <div id="name1">Rint Development</div>
+                <div id="name2">HTML5 + CSS3 Basic</div>
+            </div>
+            <div class="menu1">
+                <nav>
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <div><p>Webi</p></div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div><p>Mobile</p></div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div><p>Game</p></div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div><p>Simulation</p></div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div><p>Data</p></div>
+                            </a>
+                        </li>
+
+                    </ul>
+                </nav>
+            </div>
+            <div class="menu2">
+                <nav>
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <div><p>HTML5</p></div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div><p>SCC3</p></div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div><p>JavaScript</p></div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div><p>jQuery</p></div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div><p>Node.js</p></div>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <div class="content">
+        <section>
+            <article>
+    
+            </article>
+        </section>
+        <aside>
+    
+        </aside>
+    </div>
+    <footer></footer>
+</body>
+</html>
