@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <style>
+       #box{
+        width: 200px;
+        height: 200px;
+        border: 1px black solid;
+        margin-bottom: 20px;
+       }
+       #enter{
+        overflow: hidden;
+       }
+       #left{
+        float: left;
+        margin-right: 5px;
+       }
+    </style>
+</head>
+<body>
+    <div>
+        <form action="#">
+            <div id="box"></div>
+            <div>
+                <button type="button" name="red" onclick="changeColor('red')">red</button>
+                <button type="button" name="blue" onclick="changeColor('blue')">blue</button>
+                <button type="button" name="yellow" onclick="changeColor('yellow')">yellow</button>
+                <button type="button" name="#ccc" onclick="changeColor('#ccc')">#ccc</button>
+            </div> 
+            <hr>
+            <div id="enter">
+                <div id="left">Color Code 입력 후 enter</div>
+                <input type="text" name="inputColor" id="inputColor">
+            </div>
+            <hr>
+            <div>
+                <select name="color">
+                    <option value="orange" onselect="changeColor('orange')">orange</option>
+                    <option value="black"  onselect="changeColor('black')">black</option>
+                    <option value="blue" onsubmit="changeColor('blue')">blue</option>
+                    <option value="yellow" ondrop="changeColor('yellow')">yellow</option>
+                </select>
+            </div>
+        </form>
+    </div>
+    <script>
+        function changeColor(color){
+            var c1 = $("#box");
+            box.style.backgroundColor = color;
+        }
+       
+    </script>
+</body>
+</html>
