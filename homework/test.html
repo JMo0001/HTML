@@ -30,23 +30,27 @@
             console.log(event);
             // 각자 실습 
             console.log('==================');
-            num1 = Number($('#c1').val());
-            console.log(typeof(num1));
-            console.log(num1);
-            t1 = $('#c1Price').val(num1*2500);
-            console.log(typeof($('#c1Price').val()));
+            // num1 = Number($('#c1').val());
+            // console.log(typeof(num1));
+            // console.log(num1);
+            // t1 = $('#c1Price').val(num1*2500);
+            // console.log(typeof($('#c1Price').val()));
 
-            num2 = Number($('#c2').val());
-            console.log(typeof(num2));
-            console.log(num2);
-            t2 = $('#c2Price').val(num2*3000);
-            console.log(typeof($('#c2Price').val()));
+            // num2 = Number($('#c2').val());
+            // console.log(typeof(num2));
+            // console.log(num2);
+            // t2 = $('#c2Price').val(num2*3000);
+            // console.log(typeof($('#c2Price').val()));
 
-            num3 = Number($('#c3').val());
-            console.log(typeof(num3));
-            console.log(num3);
-            t3 = $('#c3Price').val(num3*4500);
-            console.log(typeof($('#c3Price').val()));
+            // num3 = Number($('#c3').val());
+            // console.log(typeof(num3));
+            // console.log(num3);
+            // t3 = $('#c3Price').val(num3*4500);
+            // console.log(typeof($('#c3Price').val()));
+            var num1 = Number($(this).val());
+            var price1 = Number($(this).parent().prev().text());
+            var price2 = num1*price1;
+            ($(this).parent().next().children()).val(price2)
         }   
             
         
@@ -55,11 +59,18 @@
             console.log(event.target);  // event.target == this
             console.log(event);
             // 각자 실습
-            t3 = Number($('#c3Price').val(num3*4500));
-            t2 = Number($('#c2Price').val(num2*3000));
-            t1 = Number($('#c1Price').val(num1*2500));
-            $('#cTotalPrice').val(t1+t2+t3);
-            $('#cTotalCnt').val(num1+num2+num3);
+            // t3 = Number($('#c3Price').val(num3*4500));
+            // t2 = Number($('#c2Price').val(num2*3000));
+            // t1 = Number($('#c1Price').val(num1*2500));
+            // $('#cTotalPrice').val(t1+t2+t3);
+            // $('#cTotalCnt').val(num1+num2+num3);
+            var num1 = Number($(this).val());
+            var price1 = Number($(this).parent().prev().text());
+            var price2 = Number(num1*price1);
+            
+            $('#cTotalCnt').val(num1);
+            $('#cTotalPrice').val(price2);
+
         }
     </script>
 </head>
