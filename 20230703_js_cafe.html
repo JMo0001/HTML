@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>카페 포스기</title>
     <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
-    <link href="/html/20230619_HTML/resources/css/reset.css" rel="stylesheet">
+    <!-- <link href="/html/20230619_HTML/resources/css/reset.css" rel="stylesheet"> -->
     <!--style 지정 - 각자 실습 -->
     <!---->
     <script>
@@ -14,7 +14,6 @@
             //이벤트 등록
             $('.c').on('blur', cntBlurHandler);
             $("[type=button]").on("click", calcClickHandler);
-            
         }
         
         //각종 기능 함수들
@@ -22,19 +21,78 @@
             console.log(this);
             console.log(event.target);  // event.target = this
             console.log(event);
-            //각자 실습 > number
-            var num = Number(this.value);
-            console.log($(this).prev());
-            
+            //각자 실습 
+            // console.log($(this).parent().prev().text());
+            console.log($(this).val());
+            // console.log(this.value); jQuery는 메소드로 되어있음. val()
+            $(this).parent().next().children('input.p').val(
+                $(this).parent().prev().text()
+                *
+                $(this).val()   // 아래쪽 function의 this와 무관
+            );
+            //합계
+            var sum = 0;
+            $(".c").each(function(idx, item){
+                /*
+                합계 >> each 함수
+                each >> for문을 대신함. event에 handler를 등록함
+                handler를 붙여서 잘 사용하지 않음. 
+                each function 에서의 this 사용시 위 this와 헷갈림. */
+                //item = this
+                console.log(item);
+                console.log(typeof($(item).val()));
 
+                if(idx != $(".c").length-1){
+                    var i =$(item).val()*1; //Number 대신 *1로 숫자형태 변경
+                    if (isNaN(i)){
+                        i=0;
+                    }
+                    sum+=i;
+                }
+            });   
+            /*
+            $(".c").each(function cTotalCntHandler(idx){
+                console.log(price);
+                sum += Number($(this).val());
+            });
+            $(".c").each(cTotalCntHandler); */
+            console.log(sum);
+            $("#cTotalCnt").val(sum);
+
+            sum=0
+            $(".p").each(function(idx, item){
+                
+                console.log(item);
+                console.log(typeof($(item).val()));
+
+                if(idx != $(".c").length-1){
+                    var i = Number($(item).val());
+                    if (isNaN(i)){
+                        i=0;
+                    }
+                    sum+=i;
+                }
+
+            });
+            console.log(sum);
+            $("#cTotalPrice").val(sum);
+            
         }
+        var globalValuesum = 0;
         function calcClickHandler(event){
             console.log(this);
             console.log(event.target);      // event.target = this
             console.log(event);
             //각자 실습
+
         }
-       
+        //each의 경우 event handler 처럼 함수형태 만들어서 사용하지 않음.
+        // function cTotalCntHandler(idx){
+        //     //console.log(price);
+        //     //item = this
+        //     console.log(this);
+        //     globalValuesum += $(this).val();
+        // } //위쪽 callback 함수
 
     </script>
 </head>
@@ -83,4 +141,3 @@
 </html>
 
 
-// https://codepen.io/eond/pen/wWeKvW 참고
