@@ -17,59 +17,65 @@
         }
 
         // 각종 기능 함수들
-        var num1
-        var num2 
-        var num3
-        var t1
-        var t2
-        var t3 
+    
         function cntBlurHandler(event){
-            
             console.log(this);
             console.log(event.target);  // event.target == this
             console.log(event);
             // 각자 실습 
             console.log('==================');
-            // num1 = Number($('#c1').val());
-            // console.log(typeof(num1));
-            // console.log(num1);
-            // t1 = $('#c1Price').val(num1*2500);
-            // console.log(typeof($('#c1Price').val()));
+            console.log($(this).val()); //수량
+            console.log($(this).parent().prev().text());    //가격
+            console.log($(this).parent().next().children());//합계 
+            $(this).parent().next().children().val(
+                $(this).val()   // 수량
+                *               //곱하기
+                $(this).parent().prev().text()  //가격
+            );//합계.val()
 
-            // num2 = Number($('#c2').val());
-            // console.log(typeof(num2));
-            // console.log(num2);
-            // t2 = $('#c2Price').val(num2*3000);
-            // console.log(typeof($('#c2Price').val()));
-
-            // num3 = Number($('#c3').val());
-            // console.log(typeof(num3));
-            // console.log(num3);
-            // t3 = $('#c3Price').val(num3*4500);
-            // console.log(typeof($('#c3Price').val()));
-            var num1 = Number($(this).val());
-            var price1 = Number($(this).parent().prev().text());
-            var price2 = num1*price1;
-            ($(this).parent().next().children()).val(price2)
         }   
             
         
         function calcClickHandler(event){
-            console.log(this);
-            console.log(event.target);  // event.target == this
-            console.log(event);
-            // 각자 실습
-            // t3 = Number($('#c3Price').val(num3*4500));
-            // t2 = Number($('#c2Price').val(num2*3000));
-            // t1 = Number($('#c1Price').val(num1*2500));
-            // $('#cTotalPrice').val(t1+t2+t3);
-            // $('#cTotalCnt').val(num1+num2+num3);
-            var num1 = Number($(this).val());
-            var price1 = Number($(this).parent().prev().text());
-            var price2 = Number(num1*price1);
-            
-            $('#cTotalCnt').val(num1);
-            $('#cTotalPrice').val(price2);
+            // console.log(this);
+            // console.log(event.target);  // event.target == this
+            // console.log(event);
+            console.log("======================");
+           
+            var sum=0;
+            $('.c.in').each(function(idx, item){
+                // console.log("===idx===")
+                // console.log(idx);   //수량 번호
+                // console.log("===item===");
+                // console.log(item);  //수량 카운트
+                var i=0;
+                if(idx != $('.c').length-1){
+                    i=Number($(item).val())
+                    console.log(i);
+                    if(isNaN(i)){
+                        i=0;
+                    }
+                    sum+=i;
+                }
+            })
+            $('#cTotalCnt').val(sum)  // 수량 합
+            var sum1=0;
+            $('.p').each(function(idx, item){
+                // console.log("===idx===")
+                // console.log(idx);   //수량 번호
+                // console.log("===item===");
+                // console.log(item);  //수량 카운트
+                var i=0;
+                if(idx != $('.p').length-1){
+                    i=Number($(item).val())
+                    console.log(i);
+                    if(isNaN(i)){
+                        i=0;
+                    }
+                    sum1+=i;
+                }
+            })
+            $('#cTotalPrice').val(sum1);    //가격 합
 
         }
     </script>
@@ -86,19 +92,19 @@
             <tr>
                 <td>아메리카노</td>
                 <td>2500</td>
-                <td><input type="text" name="c1" id="c1" class="c"></td>
+                <td><input type="text" name="c1" id="c1" class="c in"></td>
                 <td><input type="text" name="c1Price" id="c1Price" class="p" readonly></td>
             </tr>
             <tr>
                 <td>라떼</td>
                 <td>3000</td>
-                <td><input type="text" name="c2" id="c2" class="c"></td>
+                <td><input type="text" name="c2" id="c2" class="c in"></td>
                 <td><input type="text" name="c2Price" id="c2Price" class="p" readonly></td>
             </tr>
             <tr>
                 <td>생강라떼</td>
                 <td>4500</td>
-                <td><input type="text" name="c3" id="c3" class="c"></td>
+                <td><input type="text" name="c3" id="c3" class="c in"></td>
                 <td><input type="text" name="c3Price" id="c3Price" class="p" readonly></td>
             </tr>
             <tr>

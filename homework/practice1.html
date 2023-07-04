@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <title>Document</title>
+    <style>
+        fieldset{
+            width: 850px;
+            height: 90px;
+            margin-bottom: 20px;
+            padding-right: 200px;
+            border: 2px solid black;
+            box-sizing: border-box;
+        }
+        #box1{
+            display: grid;
+            grid-template-columns: auto auto;
+        }
+        #box2{
+            display: grid;
+            grid-template-columns: auto auto auto auto auto auto;
+        }
+        #checklist{
+            width: 850px;
+            height: 100px;
+            border: 2px solid red;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        window.onload = loadHandler;
+        function loadHandler(){
+            //전체선택 이벤트 등록
+            $("#allCheck").on("click", allCheckHandler);
+            //item 이벤트 등록
+            $(".item").on("click", itemCheckHandler);
+            
+            
+
+        }
+        //전체선택 이벤트 Handler
+        function allCheckHandler(e){
+            console.log($(this).prop("checked"));
+            $('.item').prop("checked", $(this).prop("checked"));
+        }
+        //item 이벤트 Handler
+        const itemAll = 12;
+        function itemCheckHandler(e){
+            console.log('itemCheckHandler');
+            console.log($(this).prop("checked")); 
+            console.log($(".item:checked"));    //선택된 개수 파악
+            if(itemAll==$(".item:checked").length){
+                $("#allCheck").prop("checked", true);
+            }else{
+                $("#allCheck").prop("checked", false);
+            }
+        }
+    </script>
+    <fieldset>
+        <legend>취미</legend>
+        <div id="box1">
+            <div>
+                <div>
+                    <input type="checkbox" id="allCheck">
+                    <label for="allCheck">전체선택</label>
+                </div>
+            </div>
+            <div id="box2">
+                <div>
+                    <input type="checkbox" id="b1" class="item">
+                    <label for="b1">종합</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="b2" class="item">
+                    <label for="b2">소설</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="b3" class="item">
+                    <label for="b3">시/에세이</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="b4" class="item">
+                    <label for="b4">경제/경영</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="b5" class="item">
+                    <label for="b5">자기계발</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="b6" class="item">
+                    <label for="b6">아동</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="b7" class="item">
+                    <label for="b7">여행</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="b8" class="item">
+                    <label for="b8">과학</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="b9" class="item">
+                    <label for="b9">역사/문화</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="b10" class="item">
+                    <label for="b10">외국어</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="b11" class="item">
+                    <label for="b11">컴퓨터</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="b12" class="item">
+                    <label for="b12">만화</label>
+                </div>
+            </div>
+        </div>
+    </fieldset>
+    <div>
+        <button type="button">카테고리 선택</button>
+        <div id="checklist"></div>
+    </div>
+    
+</body>
+</html>
