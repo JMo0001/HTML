@@ -47,12 +47,12 @@
         //item 이벤트 Handler
         const itemAll = 12;
         function itemCheckHandler(e){
-            console.log('itemCheckHandler');
-            console.log($(this).prop("checked")); 
-            console.log("vvvvv");
-            console.log($(this));
-            console.log($(this).next().text());
-            console.log($(".item:checked"));    //선택된 개수 파악
+            // console.log('itemCheckHandler');
+            // console.log($(this).prop("checked")); 
+            // console.log("vvvvv");
+            // console.log($(this));
+            // console.log($(this).next().text());
+            // console.log($(".item:checked"));    //선택된 개수 파악
             if(itemAll == $(".item:checked").length){
                 $("#allCheck").prop("checked", true);
 
@@ -62,13 +62,20 @@
             }
 
             if($(this).prop("checked")==true){
-                console.log("aaaaaaaa")
-                console.log($(this).parent().data("id"));
-                console.log($(this).next().text());
+                // console.log("aaaaaaaa")
+                // console.log($(this).next().text());
                 var htmlVal = '<span>'+$(this).next().text()+'</span> ';
                 $("#checklist").append(htmlVal);
                 console.log(htmlVal);
+                //체크하면 추가됨
+            }else{
+                console.log("oooout");
+                console.log($(this));
+                console.log($(this).next().text());
+                
             }
+            
+            
         }
     </script>
     <fieldset>
