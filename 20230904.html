@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <title>Document</title>
+    <style>
+        .checkboxs{
+            display: grid;
+            grid-template-columns: auto auto auto;
+        }
+        .checkedItems{
+            border: 1px solid black;
+            padding: 10px 20px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <label for="allCheck">전체선택 : </label>
+        <input type="checkbox" id="allCheck">
+        <label for="revCheck">반대선택 : </label>
+        <input type="checkbox" id="revCheck">
+    </div>
+    <div class="checkboxs"></div>
+
+    <div class="checkedItems">
+        <!-- <div data-id="1">
+            <span>id_1</span>
+            <button type="button" class="btnUncheck">선택해제</button>
+        </div> -->
+        <!-- <div>id_3</div> -->
+    </div>
+
+    <script>
+        const itemCnt = 10;
+        var htmlVal = "";
+        for(var i=1; i<itemCnt+1;i++){
+            htmlVal += 
+            `
+            <div data-id="${i}">
+                <label for="id-${i}">id-${i}</label> 
+                <input type="checkbox" id="id-${i}" class="item">               
+            </div>
+            `
+        }
+        $(".checkboxs").append(htmlVal);
+    </script>
+    <script>
+        $("#allCheck").on("click", allCheckHandler)
+        function allCheckHandler(e){
+            var allchecked = $(this).prop("checked");
+            $(".item").prop("checked", allchecked);
+            $(".checkedItems").html(""); 
+            if(allchecked == true){
+                var htmlVal = "";
+                for(var dataid=1; dataid<itemCnt+1; dataid++){
+                htmlVal += `
+                <div data-id="${dataid}">
+                    <span>${dataid}</span>
+                    <button type="button" class="btnUncheck">선택해제</button> 
+                </div>
+                    `;
+                }
+                $(".checkedItems").append(htmlVal);
+            }
+            $(".btnUncheck").off("click");
+            $(".btnUncheck").on("click", btnUncheckHandler);
+        }
+    </script>
+    <script>
+        $(".item").on("click", itemClickHandler)
+        function itemClickHandler(e){
+            if(itemCnt==$(".item:checked").length){
+                $("#allCheck").prop("checked", true);
+            }else{
+                $("#allCheck").prop("checked", false);
+            }
+            if($(this).prop("checked") == true){
+                var dataid = $(this).parent().data("id");
+                var htmlVal = "";
+                htmlVal += `
+                <div data-id="${dataid}">
+                    <span>${dataid}</span>
+                    <button type="button" class="btnUncheck">선택해제</button>
+                </div>
+                `;
+            $(".checkedItems").append(htmlVal);
+            }else{
+                var dataid = $(this).parent().data("id");
+                $(".checkedItems>div").each(function(idx, item){
+                    if($(item).data("id") == dataid){
+                        $(item).remove();
+                    return false;
+                    }
+                })
+            }
+        }
+    </script>
+    <script>
+        $("#revCheck").on("click", revCheckHandler);
+        function revCheckHandler(e){
+            $(".checkedItems").html("");
+            $(".item").each(function(idx, item){
+                var status = $(item).prop("checked");
+                $(item).prop("checked", !status);
+                if(!status == true){
+                    var dataid = $(item).parent().data("id");
+                    var htmlVal = "";
+                    htmlVal += `
+                    <div data-id="${dataid}">
+                        <span>${dataid}</span>
+                        <button type="button" class="btnUncheck">선택해제</button>
+                    </div>
+                    `;
+                $(".checkedItems").append(htmlVal);
+                }
+                
+            });
+            $(".btnUncheck").off("click");
+            $(".btnUncheck").on("click", btnUncheckHandler);
+            if(itemCnt==$(".item:checked").length){
+            $("#allCheck").prop("checked", true);
+            }else{
+            $("#allCheck").prop("checked", false);
+            }
+        }
+    </script>
+    <script>
+        function btnUncheckHandler(){
+            console.log($(this).parent().data("id"));
+            var id = $(this).parent().data("id");   
+            $(this).parent().remove();
+
+            for(var i = 0; i<$(".checkboxs > div").length; i++){
+                var $element = $(".checkboxs > div").eq(i); //리턴값이 jquery 모양이니 변수 이름도 $ㅇㅇㅁㅁ(jquery 모양)
+                var element_id = $element.data("id");
+                if(element_id ==id){
+                $element.children("input.item").prop("checked",false);
+                }
+            }
+            $("#allCheck").prop("checked", false);
+        }
+    </script>
+
+    <script>
+const [a,b] = [10,20]
+console.log(a); //10
+const [c,d,e] = q1;
+
+//imutable << 자료형 변경 불가능
+var g = 10; // number
+g='aaa'; // string
+g=[];   // object(Array)
+g=function(){}  // function
+    </script>
+
+</body>
+</html>
