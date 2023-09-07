@@ -12,7 +12,7 @@ class R044_ReactstrapForm extends Component{
                     <option>woman</option>
                     <option>man</option>
                 </Input>
-                <Row Form>
+                <Row form="true">
                     <Col md={6}>
                         <FormGroup>
                             <Label for="exampleAddress">address</Label>

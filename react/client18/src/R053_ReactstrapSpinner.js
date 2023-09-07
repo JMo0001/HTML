@@ -7,7 +7,7 @@ class R053_ReactstrapSpinner extends Component{
             <>
                 <Spinner color="secondary"/>
                 <Spinner color="success"/>
-                <Spinner type="grow" color="dart"/>
+                <Spinner type="grow" color="dark"/>
                 <Spinner type="grow" color="info"/>
                 <Spinner size={'sm'} color="primary"/>
                 <Spinner style={{width:'10rem', height:'0.5rem'}} color="dark"/><br/>

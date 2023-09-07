@@ -11,7 +11,7 @@ class R024_ReactState extends Component{
     render(){
         return(
             <div>
-                {this.state.StateString}{this.state.StateNumber}
+                {this.state.StateString}, {this.state.StateNumber}
             </div>
         )
     }
