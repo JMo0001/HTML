@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html>
+<style>
+.droptarget {
+  width: 100px; 
+  height: 30px;
+  padding: 5px;
+  border: 1px solid black;
+}
+</style>
+
+<body>
+<h1>HTML DOM Events</h1>
+<h2>The ondragstart, ondragover, and ondrop Events</h2>
+
+<p>Use the addEventListener() method to attach "dragstart", "dragover" and "drop" events to the document object.</p>
+
+<div class="droptarget">
+  <p draggable="true" id="dragtarget">Drag me!</p>
+</div>
+
+<p>Drag the text up and down between the two rectangles:</p>
+
+<div class="droptarget"></div>
+
+<p id="demo"></p>
+
+<script>
+/* Event fired on the drag target */
+document.addEventListener("dragstart", function(event) {
+    console.log(event.target.id);
+  event.dataTransfer.setData("Text", event.target.id);
+  document.getElementById("demo").innerHTML = "Started to drag the p element.";
+});
+
+/* Events fired on the drop target */
+document.addEventListener("dragover", function(event) {
+  event.preventDefault();
+});
+
+document.addEventListener("drop", function(event) {
+  event.preventDefault();
+  const data = event.dataTransfer.getData("Text");
+  event.target.appendChild(document.getElementById(data));
+  document.getElementById("demo").innerHTML = "The p element was dropped";
+});
+</script>
+
+</body>
+</html>
